@@ -119,7 +119,7 @@ export const FlowChart = (props: IFlowChartProps) => {
     const isTooFarRight = scale * x + offset.x > canvasSize.width
     const isTooFarUp = scale * y + offset.y + scale * size.height < 0
     const isTooFarDown = scale * y + offset.y > canvasSize.height
-    return /*!(isTooFarLeft || isTooFarRight || isTooFarUp || isTooFarDown)*/true;
+    return !(isTooFarLeft || isTooFarRight || isTooFarUp || isTooFarDown) || true
   })
 
   const matrix = config.smartRouting ? getMatrix(chart.offset, Object.values(nodesInView.map((nodeId) => nodes[nodeId]))) : undefined
